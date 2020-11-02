@@ -6,11 +6,13 @@ export class BattleData
     public readonly Xsize = 10;
     public readonly Ysize = 20;
     public readonly BasePos = new Vect2(-270,-570);
+    public m_iPoint: number;
     public m_stStage: GameStage;
     public m_arrBlockMap: Array<Array<Block>>;
 
     constructor()
     {
+        this.m_iPoint = 0;
         this.m_stStage = GameStage.PLAY;
         this.m_arrBlockMap = [];
         for(let i = 0;i < this.Xsize;i++)

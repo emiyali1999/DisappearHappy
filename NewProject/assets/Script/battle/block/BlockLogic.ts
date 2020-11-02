@@ -356,6 +356,7 @@ export class BlockLogic
                 DisappearHappy.Logic.BattleData.m_arrBlockMap[i][j] = new Block(type,rot,pos);
             }
         }
+        DisappearHappy.Logic.BattleData.m_iPoint += point;
     }
 
     private IsGridConnect(v2: Vect2): boolean

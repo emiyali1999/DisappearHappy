@@ -6,6 +6,7 @@ import {BlockView} from "./BlockView";
 export default class BlockRender
 {
     private m_stRenderNode: cc.Node;
+    private m_stPointPanel: cc.Node;
     private m_arrBlockViewMap: Array<Array<BlockView>>;
 
     constructor()
@@ -20,6 +21,7 @@ export default class BlockRender
             this.m_arrBlockViewMap[i] = [];
         }
         this.m_stRenderNode = cc.find('Canvas').getChildByName('blocknode');
+        this.m_stPointPanel = cc.find('Canvas').getChildByName('point');
         for(let i = 0;i < DisappearHappy.Logic.BattleData.Xsize;i++)
         {
             for(let j = 0;j < DisappearHappy.Logic.BattleData.Ysize;j++)
@@ -50,5 +52,6 @@ export default class BlockRender
                 this.m_arrBlockViewMap[i][j].update();
             }
         }
+        this.m_stPointPanel.getComponent(cc.Label).string = DisappearHappy.Logic.BattleData.m_iPoint.toString();
     }
 }
